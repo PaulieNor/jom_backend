@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_jom_backend_1686237841834-pr-trigger-input-set
+  identifier: Build_jom_backend_1686237841834prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: jobsonmarsdev
+  pipeline:
+    identifier: Build_jom_backend_1686237841834
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
