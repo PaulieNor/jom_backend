@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_jom_backend_1686237841834-push-trigger-input-set
+  identifier: Build_jom_backend_1686237841834pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: jobsonmarsdev
+  pipeline:
+    identifier: Build_jom_backend_1686237841834
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
