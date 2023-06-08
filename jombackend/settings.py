@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2+8bvu6&ki=@frd^ed*n(+yokurb3v2*(bb4p8^ijwfs^obra+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 #TODO Get from AWS Secrets or Environment Variables
 AWS_REGION = 'us-west-2' 
