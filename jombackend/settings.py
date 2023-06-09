@@ -91,12 +91,62 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import boto3
+from botocore.exceptions import ClientError
+
+def get_secret():
+
+    secret_name = "rds!db-c75156a1-80ff-41f2-9785-0be96c869bf1"
+    region_name = "eu-west-2"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        # For a list of exceptions thrown, see
+        # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+        raise e
+
+    # Decrypts secret using the associated KMS key.
+    secret = get_secret_value_response['SecretString']
+    return secret
+
+secret = get_secret()
+
 DATABASES = {
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'postgres',
+
+        'USER': secret['username'],
+
+        'PASSWORD': secret['password'],
+
+        'HOST': 'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
+
+        'PORT': '5432',
+
+    }
+}
+
+
+"""{
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
 
 
 # Password validation
