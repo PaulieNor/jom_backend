@@ -93,6 +93,7 @@ TEMPLATES = [
 
 import boto3
 from botocore.exceptions import ClientError
+import json
 
 def get_secret():
 
@@ -119,7 +120,7 @@ def get_secret():
     secret = get_secret_value_response['SecretString']
     return secret
 
-secret = get_secret()
+secret = json.loads(get_secret())
 
 DATABASES = {
     'default': {
