@@ -94,10 +94,13 @@ TEMPLATES = [
 import boto3
 from botocore.exceptions import ClientError
 import json
+import os
+
+# rds!db-c75156a1-80ff-41f2-9785-0be96c869bf1
 
 def get_secret():
 
-    secret_name = "rds!db-c75156a1-80ff-41f2-9785-0be96c869bf1"
+    secret_name = os.environ['AWS_SECRET_NAME'] # rds!db-c75156a1-80ff-41f2-9785-0be96c869bf1
     region_name = "eu-west-2"
 
     # Create a Secrets Manager client
@@ -133,7 +136,7 @@ DATABASES = {
 
         'PASSWORD': secret['password'],
 
-        'HOST': 'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
+        'HOST': os.environ['DB_HOST'] #'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
 
         'PORT': '5432',
 
