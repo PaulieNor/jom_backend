@@ -136,7 +136,7 @@ DATABASES = {
 
         'PASSWORD': secret['password'],
 
-        'HOST': os.environ['DB_HOST'] #'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
+        'HOST': os.environ['DB_HOST'], #'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
 
         'PORT': '5432',
 
