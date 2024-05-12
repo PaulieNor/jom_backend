@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2+8bvu6&ki=@frd^ed*n(+yokurb3v2*(bb4p8^ijwfs^obra+'
 
@@ -29,8 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 #TODO Get from AWS Secrets or Environment Variables
-AWS_REGION = 'us-west-2' 
-AWS_USER_POOL_ID = 'us-west-2_abc123'
+AWS_REGION = 'eu-west-2' 
+AWS_USER_POOL_ID = 'eu-west-2_abc123'
 
 
 USER_CREATE_PASSWORD_RETYPE = False 
@@ -134,7 +135,7 @@ DATABASES = {
 
         'PASSWORD': secret['password'],
 
-        'HOST': os.environ['DB_HOST'], #'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
+        'HOST': secret['db_host'], #'jom-db.conrzuyodxl4.eu-west-2.rds.amazonaws.com',
 
         'PORT': '5432',
 
