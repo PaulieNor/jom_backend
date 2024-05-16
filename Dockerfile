@@ -7,3 +7,6 @@ COPY requirements.txt /backend/
 EXPOSE 8000
 RUN pip install -r requirements.txt
 COPY . /backend/
+
+
+ENTRYPOINT ["python", "manage.py", "runserver"]
