@@ -3,7 +3,11 @@
 import os
 import sys
 
+<<<<<<< HEAD:jom_backend/manage.py
 #changehere
+=======
+
+>>>>>>> ac9da99 (Update manage.py):manage.py
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jombackend.settings')
