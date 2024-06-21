@@ -1,7 +1,7 @@
 [project]
-name = "upload_flask"
+name = "jom_backend"
 version = "1.0.0"
-description = "A containerised website that uploads and displays jpegs in an AWS S3 bucket."
+description = "A django backend for a jobs website."
 dependencies = [
     "asgiref==3.6.0",
     "certifi==2022.12.7",
