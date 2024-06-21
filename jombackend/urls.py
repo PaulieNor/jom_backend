@@ -21,5 +21,7 @@ urlpatterns = [
     path('jom_be/admin/', admin.site.urls),
     path('jom_be/api/v1/', include('djoser.urls')),
     path('jom_be/api/v1/', include('djoser.urls.authtoken')),
-    path('jom_be/api/v1/jobs/', include('job.urls'))
+    path('jom_be/api/v1/jobs/', include('job.urls')),
+    path("jom_be/api/v1/accounts/", include("django.contrib.auth.urls")),
+
 ]

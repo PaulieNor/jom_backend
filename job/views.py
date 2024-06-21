@@ -42,6 +42,11 @@ class BrowseJobsView(APIView):
 
         return Response(serializer.data)
 
+class CreateJobsView(APIView):
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    def post(self, request, format=None)
+
 class JobsDetailView(APIView):
     def get(self, request, pk, format=None):
         job = Job.objects.get(pk=pk)
