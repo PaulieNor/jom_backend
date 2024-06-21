@@ -3,7 +3,7 @@ ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /backend
 WORKDIR /backend
-COPY requirements.txt /backend/
+COPY pyproject.toml /backend/
 EXPOSE 8000
 RUN pip install .
 COPY . /backend/
